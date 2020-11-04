@@ -34,14 +34,14 @@ Utterances
 
 With Botium you can separate conversation structure from conversation content using Utterances. They can help you to create multilingual conversations, or alternative messages (like ‘bye’, and 'goodbye').
 
-For the sample convo script above, the first text sent to the bot is hello - you surly want your chatbot to react on other greetings like hi, good afternoon, … write an additional utterances file:::
+For the sample convo script above, the first text sent to the bot is hello - you surly want your chatbot to react on other greetings like hi, good afternoon, … write an additional utterances file::
 
   USER_HELLO_UTT
   hi
   hello
   nice day
 
-To use this utterance named USER_HELLO:::
+To use this utterance named USER_HELLO::
 
   #me
   USER_HELLO_UTT
@@ -68,14 +68,14 @@ You can use Scripting Memory to make your test more dynamic. Within a single Bot
 * an eCommerce chatbot tells some kind of "order number" ("Your order number is X-1235123")
 * BotiumScript asks the bot later for the order status ("pls tell me the status for X-1235123")
 
-You can use the predefined functions of Scripting Memory:::
+You can use the predefined functions of Scripting Memory::
 
   #me
   My ID is $random10
 
 And you can multiply your convo using Scripting Memory File. You can create two convos from your buy-beer convo to check that 2 beers costs 4$, and 3 beers costs 6$.
 
-*The scripting memory is enabled by setting the :ref:`SCRIPTING_ENABLE_MEMORY capability <ccap-scripting-enable-memory>`.*
+*The scripting memory is enabled by setting the :ref:`SCRIPTING_ENABLE_MEMORY capability <cap-scripting-enable-memory>`.*
 
 Asserters and Logic Hooks
 -------------------------
@@ -95,7 +95,7 @@ Logic Hooks and User Input Methods always have to be placed below all text in th
 User Input Methods
 ------------------
 
-Main communication channel between a user and chatbot is text. Some chatbots provide simple user interface elements such as buttons:::
+Main communication channel between a user and chatbot is text. Some chatbots provide simple user interface elements such as buttons::
 
   #me
   show me some buttons
@@ -118,7 +118,7 @@ Supported File Formats
 Composing in Text files
 -----------------------
 
-It should be so simple that everyone could compose the conversation files manually. Here is an example for a simple test conversation:::
+It should be so simple that everyone could compose the conversation files manually. Here is an example for a simple test conversation::
 
   Call Me Captain
 
@@ -173,7 +173,7 @@ Utterances Syntax
 
 *In order to have a clear distinction between literal text and reference code, the recommendation is to use a naming scheme with a special prefix, for example UTT_utterancename*
 
-Example file:::
+Example file::
 
   UTT_HELLO
   hi
@@ -200,7 +200,7 @@ It is possible to use a printf-like syntax with utterances - actually, the Node.
   hello, %s
   nice day
 
-When using such utterance lists in convo files, you have to add a parameter:::
+When using such utterance lists in convo files, you have to add a parameter::
 
   Reply to hello
 
@@ -219,7 +219,7 @@ So the texts matched are
 Scripting Memory Syntax
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-It’s a visual table format, columns are separated with the ||-character:::
+It’s a visual table format, columns are separated with the ||-character::
 
           |$productName    |$customer
   product1|Wiener Schnitzel|Joe
@@ -409,7 +409,7 @@ For multi-turn conversations, there are 3 columns required:
 * The “sender”-column for Botium to know if to send to the bot or listen for bot responses (“me” or “bot”)
 * The “text” column for Botium to send to the bot or listen as response
 
-A simple conversation looks like this:::
+A simple conversation looks like this::
 
   conversationId,sender,text
   first,me,hello
@@ -423,7 +423,7 @@ There are 2 columns required for question/answer:
 * first column contains the question (“#me”)
 * second column contains the expected answer (“#bot”)
 
-A simple conversation looks like this:::
+A simple conversation looks like this::
 
   question,answer
   hello,Hi!

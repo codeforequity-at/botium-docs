@@ -18,7 +18,7 @@ What is Botium good for ?
 * **Chatbot makers** define what the chatbot is supposed to do
 * **Botium** ensures that the chatbot does what it is supposed to do
 
-Here is the “Hello, World!” of Botium:::
+Here is the “Hello, World!” of Botium::
 
   TC01_HELLO
 

@@ -279,7 +279,7 @@ BotiumScript
 
 In Botium, the test cases are described by conversational flows the
 chatbot is supposed to follow. For a sample “greeting” scenario, the
-Botium test case looks like this — also known as “BotiumScript”:::
+Botium test case looks like this — also known as “BotiumScript”::
 
    #me
    hello bot!
@@ -303,7 +303,7 @@ Convos and Utterances
 ~~~~~~~~~~~~~~~~~~~~~
 
 So, let’s elaborate the “Hello, World!”-example from above. While some
-users will say “hello”, others maybe prefer “hi”:::
+users will say “hello”, others maybe prefer “hi”::
 
    #me
    hi bot!
@@ -321,7 +321,7 @@ Another user may enter the conversation with “hey dude!”::
 
 And there are plenty of other phrases we can think of. For this most
 simple use case, there are now at least three or more BotiumScripts to
-write. So let’s rewrite it. We name this file hello.convo.txt:::
+write. So let’s rewrite it. We name this file hello.convo.txt::
 
    TC01 - Greeting
 
@@ -334,7 +334,7 @@ write. So let’s rewrite it. We name this file hello.convo.txt:::
 You may have noticed the additional lines at the beginning of the
 BotiumScript. The first line contains a reference name for the test case
 to make it easier for you to locate the failing conversation within your
-test case library. And we add another file hello_utt.utterances.txt:::
+test case library. And we add another file hello_utt.utterances.txt::
 
    HELLO_UTT
    hello bot!
@@ -355,7 +355,7 @@ test case library. And we add another file hello_utt.utterances.txt:::
 Botium will take care that the convo and utterances files are combined
 to verify every response of your chatbot to every greeting phrase. So
 now let’s assume that your chatbot uses several phrases for greeting the
-user back. In the morning it is:::
+user back. In the morning it is::
 
    #me
    HELLO_UTT
@@ -363,7 +363,7 @@ user back. In the morning it is:::
    #bot
    Good morning, meat bag! How can I help you this early ?
 
-And in the evening it is:::
+And in the evening it is::
 
    #me
    HELLO_UTT
@@ -371,7 +371,7 @@ And in the evening it is:::
    #bot
    Good evening, meat bag! How can I help you at this late hour ?
 
-Let’s extract the bot responses to another utterances file:::
+Let’s extract the bot responses to another utterances file::
 
    BOT_GREETING_UTT
    Good evening
@@ -379,7 +379,7 @@ Let’s extract the bot responses to another utterances file:::
    Hello
    Hi
 
-And now comes the magic, we change the convo file to:::
+And now comes the magic, we change the convo file to::
 
    #me
    HELLO_UTT
@@ -414,7 +414,7 @@ Scripting Test Cases for a conversational flow
 ----------------------------------------------
 
 In BotiumScript, the conversational flow for user story “User composes
-customized bouquet” can be expressed like this:::
+customized bouquet” can be expressed like this::
 
    #me
    I want to buy a bouquet
@@ -468,7 +468,7 @@ user to express this intent:
 
 All of these user examples are valid input for the same test case, and
 in Botium these user examples are collected within an utterance list in
-a text file:::
+a text file::
 
    UTT_USER_ORDER_FLOWERS
    I want to buy a bouquet
@@ -491,7 +491,7 @@ yourself” the chatbot might as well respond with:
 These utterances can be collected in another utterance list and used in
 the test cases to allow the chatbot all responses matching one in this
 list. The first part of the user story “User composes customized
-bouquet” would then look like this:::
+bouquet” would then look like this::
 
    #me
    UTT_USER_ORDER_FLOWERS
@@ -534,7 +534,7 @@ Botium.
 Option 1: Botium CLI
 ~~~~~~~~~~~~~~~~~~~~
 
-Run Botium CLI like this:::
+Run Botium CLI like this::
 
   botium-cli run
 
@@ -677,7 +677,7 @@ Botium has all tools included for testing an NLP model. The user
 examples to send to the NLP model for evaluation are organized in
 utterance lists as simple text files. Here are two utterance lists, one
 for positive consent (“yes”), and the other for rejection (“no”) - here
-is the file UTT_YES.utterances.txt:::
+is the file UTT_YES.utterances.txt::
 
    UTT_YES
    yes
@@ -693,7 +693,7 @@ is the file UTT_YES.utterances.txt:::
    I agree
    ok
 
-And here is the file UTT_NO.utterances.txt:::
+And here is the file UTT_NO.utterances.txt::
 
    UTT_NO
    don't do it
@@ -715,7 +715,7 @@ Now that the test data is defined, the next step is to actually write
 the test cases with user input and assertions. In Botium, this is done
 with simple text files as well (or any other of the supported file
 formats). A test case named “T01_YES” is defined in a file
-T01_YES.convo.txt:::
+T01_YES.convo.txt::
 
    T01_YES
 
@@ -726,7 +726,7 @@ T01_YES.convo.txt:::
    INTENT intent_yes
    INTENT_CONFIDENCE 0.8
 
-And a second test case named “T02_NO” in a file T02_NO.convo.txt:::
+And a second test case named “T02_NO” in a file T02_NO.convo.txt::
 
    T01_NO
 
@@ -1062,7 +1062,7 @@ This code snippet does the following:
 
 4. Waiting until the basic chatbot interaction elements are visible
 
-The full Botium configuration for this scenario looks like this:::
+The full Botium configuration for this scenario looks like this::
 
   {
     "botium": {

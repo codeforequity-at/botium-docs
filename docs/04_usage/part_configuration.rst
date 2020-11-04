@@ -19,7 +19,7 @@ Every step overwrites the configuration capabilities from the previous step.
 
 *When using Botium in continuous build / testing / deployment environment, it is generally advised to not include passwords or other secrets in the configuration files, but handing it over with environment variables*
 
-The configuration files are JSON files with this anatomy:::
+The configuration files are JSON files with this anatomy::
 
   {
     "botium": {
@@ -199,7 +199,7 @@ When expanding utterances, Botium can be instructed to add an
 INCOMPREHENSION asserter to make sure the chatbot answers with something
 meaningful. One of the utterances is noted as INCOMPREHENSION.
 
-For example, the INCOMPREHENSION utterance looks like this:::
+For example, the INCOMPREHENSION utterance looks like this::
 
   INCOMPREHENSION
   sorry i don't understand
@@ -258,6 +258,8 @@ SCRIPTING_MEMORYEXPANSION_KEEP_ORIG
 
 Used while reading scripting memory from file. If it is set to true then
 the original convo will be kept
+
+.. _cap-scripting-memory-matching-mode:
 
 SCRIPTING_MEMORY_MATCHING_MODE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
