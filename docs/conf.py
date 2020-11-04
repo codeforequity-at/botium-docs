@@ -5,7 +5,7 @@ version = '1.x'
 extensions = []
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-html_theme = "alabaster"
+#html_theme = "alabaster"
 html_theme_options = {
   "fixed_sidebar": True,
   "logo": "botium-120x33.png",
