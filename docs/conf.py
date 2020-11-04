@@ -1,20 +1,15 @@
+import sphinx_rtd_theme
+
 project = 'Botium'
 copyright = '2020, Botium'
 author = 'Botium'
 version = '1.x'
-extensions = []
+extensions = [ 'sphinx_rtd_theme' ]
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-#html_theme = "alabaster"
+html_theme = "sphinx_rtd_theme"
 html_theme_options = {
-  "fixed_sidebar": True,
-  "logo": "botium-120x33.png",
-  "description": "The Selenium for Chatbots",
-  "github_banner": True,
-  "github_button": False,
-  "github_repo": "botium-core",
-  "github_user": "codeforequity-at",
-  "show_powered_by": False,
-  "pre_bg": "lightgray"
+  "logo_only": True
 }
+html_logo = '_static/botium-120x33.png'
 html_static_path = ['_static']
