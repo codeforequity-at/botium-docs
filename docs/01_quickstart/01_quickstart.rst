@@ -1,10 +1,10 @@
 Quickstart
 **********
 
+If you cannot wait to start, get a quick glimpse of Botium by starting your command line of choice and start typing (**Node.js installation is required**).
+
 ... with Mocha
 ==============
-
-If you cannot wait to start, get a quick glimpse of Botium by starting your command line of choice and start typing (**Node.js installation is required**).
 
 The following commands will install Botium Bindings, extend your Mocha specs with the Botium test case runner and run a sample Botium test::
 
