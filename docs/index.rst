@@ -15,6 +15,7 @@ Just as Selenium and Appium, Botium is free and Open Source, and `available on G
    01_quickstart/*
    02_introduction/*
    03_testing/*
-   04_usage/*
-   05_connectors/*
-   06_development/*
+   04_usage/index
+   05_botiumscript/index
+   06_connectors/*
+   07_development/*

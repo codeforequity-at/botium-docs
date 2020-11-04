@@ -1,47 +1,3 @@
-Botium Usage
-************
-
-Writing Chatbot Tests
-=====================
-
-Anatomy of a Botium Project
----------------------------
-
-
-
-
-Utterance Expansion
--------------------
-
-
-
-
-
-
-Automating Chatbot Tests
-========================
-
-
-Botium CLI vs Botium Bindings
------------------------------
-
-
-
-Using Botium CLI
-----------------
-
-
-
-
-Using Botium Bindings
----------------------
-
-expand-convos etc
-
-
-
-
-
 Configuration with Capabilities
 ===============================
 
@@ -168,6 +124,8 @@ Scripting Capabilities
 
 These capabilities are for fine-tuning the :ref:`Botium Scripting behaviour <botium-scripting>`.
 
+.. _cap-scripting-matching-mode:
+
 SCRIPTING_MATCHING_MODE
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -181,6 +139,8 @@ Logic to use for comparing the bot response to the utterances:
 -  **regexpIgnoreCase** to use `regular expressions <https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp>`_  (case insensitive)
 -  **include** to do a substring matching (case sensitive)
 -  **includeIgnoreCase** (or includeLowerCase - legacy value) to do a substring matching (case insensitive)
+
+.. _cap-scripting-enable-memory:
 
 SCRIPTING_ENABLE_MEMORY
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -339,14 +299,12 @@ Today is 02/15/2019    Today is $today    02/15/2019
 Excel Parsing Capabilities
 --------------------------
 
-See `Composing in Excel
-files <file:///C:/wiki/spaces/BOTIUM/pages/48922649/Composing+in+Excel+files>`__
+See :ref:`Composing in Excel files <botiumscript-excel-files>`
 
 CSV Parsing Capabilities
 ------------------------
 
-See `Composing in CSV
-files <file:///C:/wiki/spaces/BOTIUM/pages/48463903/Composing+in+CSV+files>`__
+See :ref:`Composing in CSV files <botiumscript-csv-files>`
 
 Rate Limiting
 -------------
@@ -438,17 +396,5 @@ RETRY_<operation>_MINTIMEOUT
 *Default: 1000 (1 sec)*
 
 Given in milliseconds. The minimum timeout to wait for the next retry.
-
-
-.. _botium-scripting:
-
-Writing Test Cases with BotiumScript
-====================================
-
-
-.. _scripting-memory:
-
-Using the Scripting Memory
-==========================
 
 

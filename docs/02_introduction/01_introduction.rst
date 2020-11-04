@@ -90,3 +90,13 @@ Botium Platform: Everything you need to run Botium in the Enterprise
 
 Botium Platform extends the open source Botium Stack libraries with enterprise features (relational database support, multiple deployment options, monitoring, build pipeline integration, load balancing and more) and includes enterprise-grade support.
 While the Botium Stack libraries are open source and free (“free” as in “freedom” as well as in “free beer”), the Botium Platform is an SaaS offer.
+
+
+Installation
+============
+
+You can find installation instructions in the Github repositories:
+
+* `Botium CLI <https://github.com/codeforequity-at/botium-cli>`_ - available as Node.js module and Docker image
+* `Botium Bindings <https://github.com/codeforequity-at/botium-bindings>`_ - available as Node.js module
+* `Botium Box <https://www.botium.ai>`_ - available on-promise and as SaaS - `Get your free instance here <https://www.botium.ai>`_

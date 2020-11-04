@@ -253,6 +253,8 @@ way.
 
 |image4|
 
+.. _botium-basics:
+
 Testing Conversational Flow
 ===========================
 
@@ -365,6 +367,7 @@ And in the evening it is:::
 
    #me
    HELLO_UTT
+
    #bot
    Good evening, meat bag! How can I help you at this late hour ?
 
