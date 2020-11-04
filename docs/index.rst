@@ -1,20 +1,20 @@
-.. Botium documentation master file, created by
-   sphinx-quickstart on Wed Nov  4 09:21:23 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Botium - Bots Testing Bots
+==========================
 
-Welcome to Botium's documentation!
-==================================
+1. **Selenium** is the de-facto-standard for testing web applications.
+2. **Appium** is the de-facto-standard for testing smartphone applications.
+3. **Botium** is for testing conversational AI.
+
+Just as Selenium and Appium, Botium is free and Open Source, and `available on Github <https://github.com/codeforequity-at/botium-core>`_.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :glob:
+   :maxdepth: 3
+   :caption: Table of Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   01_quickstart/*
+   02_introduction/*
+   03_testing/*
+   04_usage/*
+   05_connectors/*
+   06_development/*
