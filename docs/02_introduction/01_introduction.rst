@@ -109,3 +109,19 @@ Here you can find installation instructions:
 * :ref:`Botium Bindings <botium-bindings>` - available as Node.js module
 * :ref:`Botium Crawler <botium-crawler>` - available as Node.js module
 * `Botium Box <https://www.botium.ai>`_ - available on-promise and as SaaS - `Get your free instance here <https://www.botium.ai>`_
+
+.. _getting-help:
+
+How do I get help ?
+===================
+
+* Read the `Botium in a Nutshell <https://medium.com/@floriantreml/botium-in-a-nutshell-part-1-overview-f8d0ceaf8fb4>`_ series
+* If you think you found a bug in Botium, please use the `Github issue tracker <https://github.com/codeforequity-at/botium-core/>`_
+* Consult the `Botium Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUM>`__
+* For asking questions please use Stackoverflow - we are monitoring and answering questions there
+* Enter our `Discord channel <https://discordapp.com/widget?id=593736460516196353&theme=dark>`_
+
+Enterprise Support
+------------------
+
+For enterprise agreements, please contact us `on our website <https://www.botium.ai>`_.

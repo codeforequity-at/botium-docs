@@ -7,3 +7,5 @@ Botium Usage
 .. include:: part_botiumcli.rst
 .. include:: part_botiumbindings.rst
 .. include:: part_botiumcrawler.rst
+.. include:: part_botiumgrid.rst
+
