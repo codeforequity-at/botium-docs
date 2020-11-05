@@ -52,6 +52,8 @@ To name just a few features of Botium:
 * CI/CD integration with all common products in that space (Jenkins, Bamboo, Azure DevOps Pipelines, IBM Toolchain, ...)
 * and many more
 
+.. image:: botium_cycle.png
+
 Understanding the Botium Stack
 ==============================
 
@@ -64,7 +66,7 @@ When we talk about Botium, we usually mean the whole Botium Stack of components.
 * `Botium Box <https://www.botium.ai>`_, the management and reporting platform for making chatbot test automation fast and easy - `Get your free instance here <https://www.botium.ai>`_
 * `Botium Coach <https://www.botium.ai>`_ for continuous visualization of NLP performance metrics - `See Botium Coach Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUMCOACH/pages/75235329/Botium+Coach+User+Manual>`_
 
-.. image:: botium_cycle.png
+.. image:: botium_stack.png
 
 Botium Core, the heart and brain of Botium
 ------------------------------------------
