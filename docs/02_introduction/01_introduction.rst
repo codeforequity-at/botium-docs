@@ -58,8 +58,9 @@ Understanding the Botium Stack
 When we talk about Botium, we usually mean the whole Botium Stack of components. It is built on several components:
 
 * `Botium Core SDK <https://github.com/codeforequity-at/botium-core>`_ to automate conversations with a chatbot or virtual assistant
-* `Botium CLI <https://github.com/codeforequity-at/botium-cli>`_, the swiss army knife to use all functionality of Botium Core in the command line
-* `Botium Bindings <https://github.com/codeforequity-at/botium-bindings>`_, the glue to use Botium Core with test runners like Mocha, Jasmine or Jest
+* :ref:`Botium CLI <botium-cli>`, the swiss army knife to use all functionality of Botium Core in the command line
+* :ref:`Botium Bindings <botium-bindings>`, the glue to use Botium Core with test runners like Mocha, Jasmine or Jest
+* :ref:`Botium Crawler <botium-crawler>`, like a web crawler, just for chatbots
 * `Botium Box <https://www.botium.ai>`_, the management and reporting platform for making chatbot test automation fast and easy - `Get your free instance here <https://www.botium.ai>`_
 * `Botium Coach <https://www.botium.ai>`_ for continuous visualization of NLP performance metrics - `See Botium Coach Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUMCOACH/pages/75235329/Botium+Coach+User+Manual>`_
 
@@ -80,6 +81,13 @@ Botium Bindings, the glue to bind Botium to test runners
 
 A “test runner” is a piece of software which automatically runs thousands of test cases and outputs a nicely formatted summary about successful and failed test cases at the end. There are several test runners available you can choose from (Mocha, Jasmine, Jest, …) and Botium Bindings make them run the Botium test cases.
 
+Botium Crawler, like a website crawler
+--------------------------------------
+
+The Botium Crawler is doing the work of detecting the conversation flows supported by your chatbot by itself. It does so by analyzing the quick responses offered by your chatbot and simulating clicks on all of the options in parallel, following all pathes down until it reaches the end of the conversation.
+
+All detected conversation flows along all pathes are saved as Botium test cases and utterance lists and can be used as base for a regression test set.
+
 Botium Box, the management and reporting platform of Botium
 -----------------------------------------------------------
 
@@ -95,8 +103,9 @@ While the Botium Stack libraries are open source and free (“free” as in “f
 Installation
 ============
 
-You can find installation instructions in the Github repositories:
+Here you can find installation instructions:
 
-* `Botium CLI <https://github.com/codeforequity-at/botium-cli>`_ - available as Node.js module and Docker image
-* `Botium Bindings <https://github.com/codeforequity-at/botium-bindings>`_ - available as Node.js module
+* :ref:`Botium CLI <botium-cli>` - available as Node.js module and Docker image
+* :ref:`Botium Bindings <botium-bindings>` - available as Node.js module
+* :ref:`Botium Crawler <botium-crawler>` - available as Node.js module
 * `Botium Box <https://www.botium.ai>`_ - available on-promise and as SaaS - `Get your free instance here <https://www.botium.ai>`_

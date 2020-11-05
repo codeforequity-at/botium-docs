@@ -1,3 +1,5 @@
+.. _botium-caps:
+
 Configuration with Capabilities
 ===============================
 
@@ -31,10 +33,10 @@ The configuration files are JSON files with this anatomy::
     }
   }
 
-CONTAINERMODE
--------------
+Connector/Chatbot Technology Selection
+--------------------------------------
 
-This is one of the most important settings, as it defines the Botium Connector to use. Botium will try to load the connector by several means, in this order:
+The capability **CONTAINERMODE** is one of the most important settings, as it defines the Botium Connector to use. Botium will try to load the connector by several means, in this order:
 
 -  If it refers to a relative filename of a custom connector (see `Howto develop your own Botium Connector <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/38502401/Howto+develop+your+own+Botium+Connector>`_) in the current working directory, this file is loaded and used as connector
 -  Botium tries to load an NPM module with this name
