@@ -244,16 +244,14 @@ The structure is simple and visually appealing.
 Conversation and Partial Conversation Syntax
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- First column hold the test case name (optional)
+- First column holds the test case name (optional)
 - Left column corresponds to the *#me* tag
 - Right column corresponds to the *#bot* tag
 - An empty row means the convo is over, and the next will start below
 
-Download an example file :download:`here <media/excel/helloworld.xlsx>`
+Download an example file :download:`with explicit test case names <media/excel/helloworld_namedconvos.xlsx>` and another one :download:`without explicit test case names <media/excel/helloworld.xlsx>`
 
-If you put the #me and #bot message in the same row, then it is
-recognized as a simple one question one answer conversation. (You cannot
-mix this two mode on a single sheet) - download an example file :download:`here <media/excel/helloworldQestionAnswer.xlsx>`.
+If you put the #me and #bot message in the same row, then it is recognized as a simple one question one answer conversation. (You cannot mix this two mode on a single sheet) - download an example file :download:`here <media/excel/helloworldQestionAnswer.xlsx>`.
 
 .. image:: media/excel/image3.png
 
