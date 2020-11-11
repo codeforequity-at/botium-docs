@@ -6,7 +6,7 @@ Botium supports running scripted, pre-defined or pre-recorded conversations writ
 * User inputs which are sent to the chatbot
 * Bot responses which are expected to be received from the chatbot
 * Asserters and Logic Hooks to add advanced assertion or conversation flow logic
-* Scripting Memory to set an get variables 
+* Scripting Memory to set an get variables
 
 In case there are any differences in the bot responses from the pre-recorded scripts, the script returns a failure notification to the caller. (There are multiple checking methods. You can choose with :ref:`SCRIPTING_MATCHING_MODE capability <cap-scripting-matching-mode>`)
 
@@ -108,7 +108,7 @@ Main communication channel between a user and chatbot is text. Some chatbots pro
 
 *BUTTON* will make Botium simulate a click on a button. The implementation depends on the connector in use - for example, the Webdriver connector will look for a HTML button and simulate a user click.
 
-You can use Integrated User Inputs, or develop your own. 
+You can use Integrated User Inputs, or develop your own.
 
 Supported File Formats
 ======================
@@ -157,7 +157,9 @@ The rules are simple and concise:
 
   * Anything following the #bot in the same line will be the channel to listen to - for example: #bot #general will wait for a message on the #general-channel (Slack only)
   * In case there is a registered utterance detected with mathing reference code (see below), your chatbot is expected to answer with one of the sample utterances
+  * In case the utterance starts with a "?", the answer is OPTIONAL. Except if it starts with at least two "?". In this case first "?" will be removed, and the remaining is checked normally (without optional).
   * In case the utterance starts with a "!", the answer is checked to NOT match the text or one of the utterances samples. Except if it starts with at least two "!". In this case first "!" will be removed, and the remaining is checked normally (without negation).
+  * The OPTIONAL and NOT can be combined. The correct order is first optional then negation: "?!".
   * If the message to receive is not specified, then the answer wont be checked.
 
 * A line starting with #begin will be used on conversation begin only (mainly for asserters and logic hooks, see next section)
@@ -459,7 +461,7 @@ Column separator used for CSV format
 
 **SCRIPTING_CSV_SKIP_HEADER**
 
-By default, a header line is expected. 
+By default, a header line is expected.
 
 **Column Selectors**
 
