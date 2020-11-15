@@ -102,6 +102,73 @@ The JSON_PATH asserter takes one or two arguments:
 
 This asserter always works on the sourceData field of the botMsg, not on the botMsg as a whole.
 
+Extending JSONPath Asserter
+---------------------------
+
+JSONPath Asserter can optionally be configured with global args in botium.json. Arguments from convo file are handed over and used as specified.
+
+- **argCount** - Number of arguments to expect in the convo file
+- **path** - predefined JSONPath expression
+- **pathTemplate** - Mustache template for predefined JSONPath expression (based on args)
+- **assertTemplate** - Mustache template for assertion value (based on args)
+
+Example 1 - WATSONV1_HAS_CONTEXT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  {
+    "botium": {
+      "Capabilities": {
+        ...
+        "ASSERTERS": [
+          {
+            "ref": "WATSONV1_HAS_CONTEXT",
+            "src": "JsonPathAsserter",
+            "args": {
+              "argCount": 1,
+              "pathTemplate": "$.context['{{args.0}}']"
+            }
+          }
+        ]
+      }
+    }
+  }
+
+Usage::
+
+  #bot
+  WATSONV1_HAS_CONTEXT my-context-variable
+
+Example 1 - WATSONV1_CONTEXT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  {
+    "botium": {
+      "Capabilities": {
+        ...
+        "ASSERTERS": [
+          {
+            "ref": "WATSONV1_CONTEXT",
+            "src": "JsonPathAsserter",
+            "args": {
+              "argCount": 2,
+              "pathTemplate": "$.context['{{args.0}}']",
+              "assertTemplate": "{{args.1}}"
+            }
+          }
+        ]
+      }
+    }
+  }
+
+Usage::
+
+  #bot
+  WATSONV1_CONTEXT my-context-variable|expected-value
+
 Response Length Asserter
 ------------------------
 
