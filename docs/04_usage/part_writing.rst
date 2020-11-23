@@ -36,8 +36,16 @@ The **recommended** directory structure is like this:
 
 Starting from the base directory (in the example above *spec/convo*), Botium will recursivly traverse the directory tree. You can choose any directory structure you think is useful in your project.
 
+
+Skipping/Ignoring Files and Test Cases
+--------------------------------------
+
+Test Cases, files and folders are ignored if:
+
+* the file or folder name starts with *skip\**, *skip-* or *skip_* (case is ignored)
+* there is a *.gitignore* and the file or folder is matched by one of the rules
+
 Utterance Expansion
 -------------------
 
 Utterance and scripting memory expansion is done dynamically when running test cases.
-
