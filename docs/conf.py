@@ -13,3 +13,4 @@ html_theme_options = {
 }
 html_logo = '_static/botium-120x33.png'
 html_static_path = ['_static']
+master_doc = 'index'
