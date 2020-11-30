@@ -9,6 +9,8 @@ You can think of Scripting Memory as collection of system functions like current
 
 *The scripting memory is enabled by setting the :ref:`SCRIPTING_ENABLE_MEMORY capability <cap-scripting-enable-memory>`.*
 
+.. _scripting-memory-variables:
+
 Scripting Memory Variables
 --------------------------
 
@@ -109,6 +111,8 @@ Third way is to use logic hooks.::
 As you see this conversation is still static. But can help you to create better managable conversations. 
 
 And if you want to clear a variable, you can use CLEAR_SCRIPTING_MEMORY logichook.
+
+.. _scripting-memory-functions:
 
 Scripting Memory Functions
 --------------------------
