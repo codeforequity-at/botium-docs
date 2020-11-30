@@ -113,7 +113,7 @@ And if you want to clear a variable, you can use CLEAR_SCRIPTING_MEMORY logichoo
 Scripting Memory Functions
 --------------------------
 
-They are the pretty functions provided by botium, like current year (*$year*), or uuid (*$uuid*). Can be send to bot in #me sections, and can be used as asserters in #bot sections same way as variables.
+They are the pretty functions provided by botium, like current year (*$year*), or uniqid (*$uniqid*). Can be send to bot in #me sections, and can be used as asserters in #bot sections same way as variables.
 
 Some of them can even used with parameters - for example *$number(5)* generates 5 digit long random number.
 
@@ -181,7 +181,7 @@ List of Functions
 * $year: Example: "2019"
 * $random10: 10 digit long random number. Example: "6084037818"
 * $random(<length>): <length> digit long random number.
-* $uuid: UUID V1. Example: "2e65c580-4fb4-11e9-b543-bf076857f1d1"
+* $uniqid:  V1. Example: "2e65c580-4fb4-11e9-b543-bf076857f1d1"
 
 .. _scripting-memory-files:
 
