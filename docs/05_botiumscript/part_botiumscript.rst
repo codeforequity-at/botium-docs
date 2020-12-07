@@ -192,17 +192,35 @@ An example for a convo - saying "hello" to the bot should make the bot anwer "hi
   #bot
   UTT_HELLO
 
-printf
-~~~~~~
+Utterances Args
+~~~~~~~~~~~~~~~
 
-It is possible to use a printf-like syntax with utterances - actually, the Node.js standard function util.format is used.::
+If an utterance name is followed by additional text, those are used to apply formatting with `util.format <https://nodejs.org/api/util.html#util_util_format_format_args>`_::
 
   UTT_HELLO
   hi, %s
   hello, %s
   nice day
 
-When using such utterance lists in convo files, you have to add a parameter::
+When using this utterance list in the *#me*-side of a convo files, you have to add a parameter::
+
+  Reply to hello
+
+  #me
+  UTT_HELLO bot
+
+  #bot
+  hello
+
+The texts sent to the bot are:
+
+* hi, bot
+* hello, bot
+* nice day bot
+
+*In case there is no format specifier given, the extra arguments are concatenated to the utterance, separated by spaces - that's why the third example above is missing the comma*
+
+When using this utterance list in the *#bot*-side of a convo file::
 
   Reply to hello
 
@@ -216,7 +234,7 @@ So the texts matched are
 
 * hi, user
 * hello, user
-* nice day
+* nice day user
 
 Scripting Memory Syntax
 ~~~~~~~~~~~~~~~~~~~~~~~
