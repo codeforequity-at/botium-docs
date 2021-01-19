@@ -158,6 +158,7 @@ List of Functions
 * $func(<some javascript code>): Executes JavaScript code. It can has multiple lines. The result of the last row will be injected.
 * $env(MY_ENV_VAR): Reads sytem environment variables
 * $cap(MY_CAP): Reads Botium capabilities
+* $msg(JSONPATH): Reads something from the current Botium message with a JSONPath expression, for example: $msg($.messageText)
 * $projectname: Test Project Name
 * $testsessionname: Test Session Name
 * $testcasename: Test Case Name (Convo Name)
