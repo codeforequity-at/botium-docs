@@ -85,7 +85,34 @@ CLEAR_SCRIPTING_MEMORY
 UPDATE_CUSTOM
 -------------
 
+Add custom data to an outgoing message to trigger custom behaviour in the connector (consult documentation of the Botium Connector).
+
 * arguments: custom action, custom field, custom value
 * This logic hook is used for triggering custom actions in a connector. You have to consult the connector documentation for the supported custom actions. 
 * When used in the #begin section, the custom action is called for all convo steps
+
+Using UPDATE_CUSTOM globally
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To attach custom data to each and every outgoing message, you can make the UPDATE_CUSTOM logic hook act globally::
+
+  {
+    "botium": {
+      "Capabilities": {
+        ...
+        "LOGIC_HOOKS": [
+          {
+            "ref": "UPDATE_CUSTOM",
+            "src": "UpdateCustomLogicHook",
+            "global": true,
+            "args": {
+              "name": "SET_DIALOGFLOW_QUERYPARAMS",
+              "arg": "payload",
+              "value": { "key":"value" }
+            }
+          }
+        ]
+      }
+    }
+  }
 
