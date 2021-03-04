@@ -98,7 +98,7 @@ Imagine an eCommerce chatbot - the response contains the shopping cart in sessio
 The JSON_PATH asserter takes one or two arguments:
 
 * First argument is the JSONPath expression to query
-* If a second argument is given, the value is compared to the outcome of the JSONPath expression (or better to say, the first retrieved value). If not given, then only the existance of the element is asserted.
+* If a second argument is given, the value is compared to the outcome of the JSONPath expression (if the expression results in multiple values, then it is compared to all of them). If not given, then only the existance of the element is asserted.
 
 This asserter always works on the sourceData field of the botMsg, not on the botMsg as a whole.
 
