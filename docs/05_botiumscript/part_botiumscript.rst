@@ -29,6 +29,78 @@ Convos are the skeleton of the Botium Scripting, they are describing the flow of
   #bot
   Goodbye!
 
+Partial Convos
+--------------
+
+With *partial convos* it is possible to reuse parts of a convo.
+
+For instance, in order to always start and end with a greeting, you can define a partial convo **PCONVO_GREETING** (in a file *greeting.pconvo.txt*)::
+
+  PCONVO_GREETING
+
+  #me
+  hello
+
+  #bot
+  Hi!
+
+And another one **PCONVO_BYE** (file *bye.pconvo.txt*)::
+
+  PCONVO_BYE
+  
+  #me
+  bye
+
+  #bot
+  Goodbye!
+
+Those partial convos can now be included in other convo files::
+
+  TC_01
+
+  #include PCONVO_GREETING
+
+  #me
+  how are you ?
+
+  #bot
+  I am fine
+
+  #include PCONVO_BYE
+
+Another possible syntax would be::
+
+  TC_01
+
+  #include
+  PCONVO_GREETING
+
+  #me
+  how are you ?
+
+  #bot
+  I am fine
+
+  #include
+  PCONVO_BYE
+
+Or::
+
+  TC_01
+
+  #begin
+  INCLUDE PCONVO_GREETING
+
+  #me
+  how are you ?
+
+  #bot
+  I am fine
+
+  #end
+  INCLUDE PCONVO_BYE
+
+
 Utterances
 ----------
 
@@ -147,13 +219,13 @@ The rules are simple and concise:
 
 * The first line is the name of the conversation or test case
 * The second line up to the first line starting with # is an optional description text
-* A line starting with #me will send the text following on the next line(s) to your chatbot
+* A line starting with **#me** will send the text following on the next line(s) to your chatbot
 
   * Anything following the #me in the same line will be the channel to send to - for example: #me #private will send the message to the private channel (Slack only)
   * In case there is a registered utterance detected with matching reference code (see below), the utterance samples are expanded (one conversation for each utterance) and sent to the chatbot
   * If the message to send is not specified, then an empty message will be sent to bot
 
-* A line starting with #bot will expect your chatbot to answer accordingly
+* A line starting with **#bot** will expect your chatbot to answer accordingly
 
   * Anything following the #bot in the same line will be the channel to listen to - for example: #bot #general will wait for a message on the #general-channel (Slack only)
   * In case there is a registered utterance detected with mathing reference code (see below), your chatbot is expected to answer with one of the sample utterances
@@ -162,8 +234,10 @@ The rules are simple and concise:
   * The OPTIONAL and NOT can be combined. The correct order is first optional then negation: "?!".
   * If the message to receive is not specified, then the answer wont be checked.
 
-* A line starting with #begin will be used on conversation begin only (mainly for asserters and logic hooks, see next section)
-* A line starting with #end will be used on conversation end only (mainly for asserters and logic hooks, see next section)
+* A line starting with **#include** will insert a named partial convo at this place
+* A line starting with **#begin** will be used on conversation begin only (mainly for asserters and logic hooks, see next section)
+* A line starting with **#end** will be used on conversation end only (mainly for asserters and logic hooks, see next section)
+* For partial convos, #begin and #end is ignored
 
 That's it.
 
