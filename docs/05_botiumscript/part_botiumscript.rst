@@ -604,6 +604,17 @@ Composing in YAML files
     GREETING:
       - hi
       - hello!
+  scriptingMemory:
+    - header:
+        name: scenario1
+      values:
+        var1: var1_1
+        var2: var2_1
+    - header:
+        name: scenario2
+      values:
+        var1: var1_2
+        var2: var2_2      
 
 Starting ! is used to denote the YAML, so quote can help to negate assertions (if using flat strings for assertions).::
 
@@ -686,7 +697,27 @@ Composing in JSON files
         "hi",
         "hello!"
       ]
-    }
+    },
+    "scriptingMemory": [
+      {
+        "header": {
+          "name": "scenario1"
+        },
+        "values": {
+          "var1": "var1_1",
+          "var2": "var2_1"
+        }
+      },
+      {
+        "header": {
+          "name": "scenario2"
+        },
+        "values": {
+          "var1": "var1_2",
+          "var2": "var2_2"
+        }
+      }
+    ]
   }
 
 
