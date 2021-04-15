@@ -608,13 +608,13 @@ Composing in YAML files
     - header:
         name: scenario1
       values:
-        var1: var1_1
-        var2: var2_1
+        $var1: var1_1
+        $var2: var2_1
     - header:
         name: scenario2
       values:
-        var1: var1_2
-        var2: var2_2      
+        $var1: var1_2
+        $var2: var2_2      
 
 Starting ! is used to denote the YAML, so quote can help to negate assertions (if using flat strings for assertions).::
 
@@ -704,8 +704,8 @@ Composing in JSON files
           "name": "scenario1"
         },
         "values": {
-          "var1": "var1_1",
-          "var2": "var2_1"
+          "$var1": "var1_1",
+          "$var2": "var2_1"
         }
       },
       {
@@ -713,8 +713,8 @@ Composing in JSON files
           "name": "scenario2"
         },
         "values": {
-          "var1": "var1_2",
-          "var2": "var2_2"
+          "$var1": "var1_2",
+          "$var2": "var2_2"
         }
       }
     ]
