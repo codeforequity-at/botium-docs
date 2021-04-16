@@ -18,6 +18,7 @@ There are several options how to inject our Javascript code here. The functions 
 -  **container**: the currently executing Botium container
 -  **meMsg** (only for CUSTOMHOOK_ONUSERSAYS): message sent to bot
 -  **botMsg** (only for CUSTOMHOOK_ONBOTRESPONSE): message received from bot
+-  **request**: for doing HTTP(S) requests
 
 As NPM module
 -------------
