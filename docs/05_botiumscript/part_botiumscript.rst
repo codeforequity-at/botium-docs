@@ -218,7 +218,7 @@ Conversation and Partial Conversation Syntax
 The rules are simple and concise:
 
 * The first line is the name of the conversation or test case
-* The second line up to the first line starting with # is an optional description text
+* The second line up to the first line starting with one of the special tags below (#begin, #me, #bot, #include, #end) is an optional description text
 * A line starting with **#me** will send the text following on the next line(s) to your chatbot
 
   * Anything following the #me in the same line will be the channel to send to - for example: #me #private will send the message to the private channel (Slack only)
@@ -228,7 +228,7 @@ The rules are simple and concise:
 * A line starting with **#bot** will expect your chatbot to answer accordingly
 
   * Anything following the #bot in the same line will be the channel to listen to - for example: #bot #general will wait for a message on the #general-channel (Slack only)
-  * In case there is a registered utterance detected with mathing reference code (see below), your chatbot is expected to answer with one of the sample utterances
+  * In case there is a registered utterance detected with matching reference code (see below), your chatbot is expected to answer with one of the sample utterances
   * In case the utterance starts with a "?", the answer is OPTIONAL. Except if it starts with at least two "?". In this case first "?" will be removed, and the remaining is checked normally (without optional).
   * In case the utterance starts with a "!", the answer is checked to NOT match the text or one of the utterances samples. Except if it starts with at least two "!". In this case first "!" will be removed, and the remaining is checked normally (without negation).
   * The OPTIONAL and NOT can be combined. The correct order is first optional then negation: "?!".
