@@ -28,6 +28,18 @@ Imagine a chatbot taking orders for pizza delivery. It has a well-defined invent
 
 The BUTTONS asserter (arguments: button texts to look out for), used in #bot section, will assert that buttons with text are present in response.
 
+BUTTONS_COUNT and BUTTONS_COUNT_REC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Those asserters will validate the number of buttons (BUTTONS_COUNT_REC will also count nested buttons).
+
+You can use number comparision there (or use a number for equality)::
+
+  BUTTONS_COUNT 2
+  BUTTONS_COUNT =2
+  BUTTONS_COUNT >2
+  BUTTONS_COUNT <=3
+
 Media Asserter
 --------------
 
@@ -50,6 +62,18 @@ Imagine a chatbot taking orders for pizza delivery. It has a well-defined invent
   MEDIA kids_pizza.png|normal_pizza.png|family_pizza.png
 
 The MEDIA asserter (arguments: media uri to look out for), used in #bot section, will assert that media files are attached in the response.
+
+MEDIA_COUNT and MEDIA_COUNT_REC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Those asserters will validate the number of media content (MEDIA_COUNT_REC will also count nested content).
+
+You can use number comparision there (or use a number for equality)::
+
+  MEDIA_COUNT 2
+  MEDIA_COUNT =2
+  MEDIA_COUNT >2
+  MEDIA_COUNT <=3
 
 Forms Asserter
 --------------
@@ -92,7 +116,6 @@ Imagine an eCommerce chatbot - the response contains the shopping cart in sessio
 
   #bot
   JSON_PATH $.session.cart
-  JSON_PATH $.session.cart.item[0].count | 5
   JSON_PATH $.session.cart.item[0].name | banana
 
 The JSON_PATH asserter takes one or two arguments:
@@ -101,6 +124,18 @@ The JSON_PATH asserter takes one or two arguments:
 * If a second argument is given, the value is compared to the outcome of the JSONPath expression (if the expression results in multiple values, then it is compared to all of them). If not given, then only the existance of the element is asserted.
 
 This asserter always works on the sourceData field of the botMsg, not on the botMsg as a whole.
+
+JSON_PATH_COUNT
+~~~~~~~~~~~~~~~
+
+This asserter will validate the number of JSONPath results.
+
+You can use number comparision there (or use a number for equality)::
+
+  JSON_PATH_COUNT $.session.cart.item|2
+  JSON_PATH_COUNT $.session.cart.item|=2
+  JSON_PATH_COUNT $.session.cart.item|>2
+  JSON_PATH_COUNT $.session.cart.item|<=3
 
 Extending JSONPath Asserter
 ---------------------------
@@ -418,6 +453,18 @@ Imagine a chatbot taking food orders. In the response there are cards for paging
   #bot
   Please choose something from our Menu Card!
   CARDS Soup|Pizza|Dessert
+
+CARDS_COUNT and CARDS_COUNT_REC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Those asserters will validate the number of cards (CARDS_COUNT_REC will also count nested cards).
+
+You can use number comparision there (or use a number for equality)::
+
+  CARDS_COUNT 2
+  CARDS_COUNT =2
+  CARDS_COUNT >2
+  CARDS_COUNT <=3
 
 Negation
 ---------
