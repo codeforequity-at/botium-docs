@@ -101,5 +101,7 @@ Configuration the test runners (Mocha, Jasmine or Jest) are done in the package.
     ...
   }
 
+Test Runner Timeouts
+--------------------
 
-
+Botium tests can take a rather long time, whereas test runners like Mocha and Jasmine expect the tests to complete within a short period of time. It is possible to extend this period of default 60000ms (60 seconds) by setting the environment variables *BOTIUM_MOCHA_TIMEOUT* / *BOTIUM_JASMINE_TIMEOUT* (milliseconds).
