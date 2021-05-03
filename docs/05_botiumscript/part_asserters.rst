@@ -455,7 +455,7 @@ Imagine a chatbot taking food orders. In the response there are cards for paging
   CARDS Soup|Pizza|Dessert
 
 CARDS_COUNT and CARDS_COUNT_REC
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Those asserters will validate the number of cards (CARDS_COUNT_REC will also count nested cards).
 
@@ -465,6 +465,65 @@ You can use number comparision there (or use a number for equality)::
   CARDS_COUNT =2
   CARDS_COUNT >2
   CARDS_COUNT <=3
+
+Bot Reply Count Asserters
+-------------------------
+
+Those asserters will validate that there are no "unforgotten" (unconsumed) bot replies in the processing queue.
+
+* **BOT_CONSUMED** will make sure that there is no more unconsumed bot reply in the processing queue
+* **BOT_UNCONSUMED_COUNT** will make sure that there are unconsumed bot replies in the processing queue
+
+  * first argument is an expected number - 2, =2, >2 etc
+
+In combination with the :ref:`SKIP_BOT_UNCONSUMED <logichooks-skip-bot-unconsumed>` logic hook there are several common usage scenarios:
+
+Consume All Bot Replies
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Want to make sure that all bot replies are consumed by the convo::
+
+  #end
+  BOT_CONSUMED
+
+Ignore Bot Welcome Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some chatbots are sending welcome messages before a real conversation is started. To ignore the first few welcome messages that are sent in the first 5 seconds::
+
+  #begin
+  PAUSE 5000
+  SKIP_BOT_UNCONSUMED
+
+Expect an Unkown Number of Bot Replies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If a chatbot replies with an unknown number of messages, it is possible to handle this case with something like this::
+
+  #me
+  Hello
+  PAUSE 3000
+
+  #bot
+  BOT_UNCONSUMED_COUNT >0
+  SKIP_BOT_UNCONSUMED
+
+  #me
+  ...
+
+Or another option (expecting exactly 5 replies finally)::
+
+  #me
+  Hello
+
+  #end
+  PAUSE 3000
+  BOT_UNCONSUMED_COUNT =5
+
+
+
+* Attention: the currently processing bot reply is already consumed, so you have to deduct 1 from the expected number *
+
 
 Negation
 ---------

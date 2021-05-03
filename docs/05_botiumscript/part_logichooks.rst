@@ -9,7 +9,8 @@ PAUSE
 -----
 
 * argument: pause time in milliseconds
-* used in a #me section, will pause after text is sent to bot.
+* when used in a #me section, will pause after text is sent to bot
+* when used in a #bot section, will pause after reply is received from bot
 
 WAITFORBOT
 ----------
@@ -81,6 +82,14 @@ CLEAR_SCRIPTING_MEMORY
 * Can be used in #begin, #me, and #bot sections, but not in botium,json as global. (Global clear has no sense. There is nothing to clear there)
 * You should start the variable name usually without "$" (Use "$" if you want to use logic hook argument replacement)
 * It is executed in the end of the section as SET_SCRIPTING_MEMORY.
+
+.. _logichooks-skip-bot-unconsumed:
+
+SKIP_BOT_UNCONSUMED
+-------------------
+
+* no arguments
+* will clear all currently unconsumed bot reply messages from the processing queue
 
 UPDATE_CUSTOM
 -------------
