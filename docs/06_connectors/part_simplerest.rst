@@ -575,6 +575,12 @@ SIMPLEREST_PING_UPDATE_CONTEXT
 Flag if ping response should be used to update the session context
 (default true)
 
+SIMPLEREST_PING_PROCESS_RESPONSE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Flag if the JSON response should be handled as chatbot welcome message. If disabled, the response will be ignored.
+(default false)
+
 HTTP Session Welcome (Start Request)
 ------------------------------------
 
@@ -615,6 +621,11 @@ SIMPLEREST_START_TIMEOUT
 
 HTTP Timeout and retry interval (default 10 seconds)
 
+SIMPLEREST_START_PROCESS_RESPONSE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Flag if the JSON response should be handled as chatbot welcome message. If disabled, the response will be ignored.
+(default true)
 
 HTTP Session Teardown (“Stop” Request)
 --------------------------------------
