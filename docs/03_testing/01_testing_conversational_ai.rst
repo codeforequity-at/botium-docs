@@ -339,6 +339,8 @@ Botium can then create convo test cases out of utterance files dynamically:
 * For incomprehension testing, it is possible to define a special **INCOMPREHENSION** utterance file - see :ref:`SCRIPTING_UTTEXPANSION_INCOMPREHENSION <botium-caps-SCRIPTING_UTTEXPANSION_INCOMPREHENSION>`
 * For NLU/NLP testing, Botium can check the returned NLU/NLP intent - see :ref:`SCRIPTING_UTTEXPANSION_USENAMEASINTENT <botium-caps-SCRIPTING_UTTEXPANSION_USENAMEASINTENT>`
 
+Enabling Utterance Expansion:
+
 * In **Botium CLI**, use the *--expandutterances yes* command line switch
 * In **Botium Bindings**, set the *expandUtterancesToConvos* option (see :ref:`Botium Bindings <botium-bindings>`)
 * In **Botium Box**, use the *Scripting Settings* of the test set
