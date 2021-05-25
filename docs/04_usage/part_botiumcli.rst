@@ -1,7 +1,7 @@
 .. _botium-cli:
 
-Botium CLI Documentation
-========================
+Botium CLI
+==========
 
 **Botium CLI** is the command line tool to access Botium Core functionality (and more).
 

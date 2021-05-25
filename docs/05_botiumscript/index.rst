@@ -1,7 +1,7 @@
 .. _botium-scripting:
 
-BotiumScript API Docs
-*********************
+Technical Reference
+*******************
 
 .. include:: part_botiumscript.rst
 .. include:: part_scriptingmemory.rst

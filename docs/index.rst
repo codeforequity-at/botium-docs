@@ -5,7 +5,7 @@ Botium - Bots Testing Bots
 2. **Appium** is the de-facto-standard for testing smartphone applications.
 3. **Botium** is for testing conversational AI.
 
-Just as Selenium and Appium, Botium is free and Open Source, and `available on Github <https://github.com/codeforequity-at/botium-core>`_.
+Botium is free and Open Source, and `available on Github <https://github.com/codeforequity-at/botium-core>`_.
 
 .. toctree::
    :glob:

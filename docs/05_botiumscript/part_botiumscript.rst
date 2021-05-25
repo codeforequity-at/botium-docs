@@ -1,5 +1,5 @@
-The Basics
-==========
+BotiumScript Concepts
+=====================
 
 Botium supports running scripted, pre-defined or pre-recorded conversations written as **BotiumScript**. A conversation consists of a collection of
 
@@ -129,8 +129,8 @@ To use this utterance named USER_HELLO::
 
 To make Botium use the utterances files in your convos:
 
-* :ref:`When using Botium CLI <using-botium-cli>`, use the --expandutterances command line switch
-* :ref:`When using Botium Bindings <using-botium-bindings>`, use the expandConvos flag in the package.json configuration
+* :ref:`When using Botium CLI <botium-cli>`, use the *--expandutterances yes* command line switch
+* :ref:`When using Botium Bindings <botium-bindings>`, use the *expandConvos* flag in the package.json configuration
 
 Scripting Memory
 ----------------

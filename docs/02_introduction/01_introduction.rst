@@ -1,17 +1,14 @@
-Introduction
-************
-
 What is Botium
-==============
+**************
 
 1. **Selenium** is the de-facto-standard for testing web applications.
 2. **Appium** is the de-facto-standard for testing smartphone applications.
 3. **Botium** is for testing conversational AI.
 
-Just as Selenium and Appium, Botium is free and Open Source, and `available on Github <https://github.com/codeforequity-at/botium-core>`_.
+Botium is free and Open Source, and `available on Github <https://github.com/codeforequity-at/botium-core>`_.
 
-What is Botium good for ?
-=========================
+Who should use Botium ?
+=======================
 
 `Botium <https://www.botium.ai/>`_ supports chatbot makers in `training and quality assurance <https://www.botium.ai/>`_:
 
@@ -101,9 +98,8 @@ Botium Platform: Everything you need to run Botium in the Enterprise
 Botium Platform extends the open source Botium Stack libraries with enterprise features (relational database support, multiple deployment options, monitoring, build pipeline integration, load balancing and more) and includes enterprise-grade support.
 While the Botium Stack libraries are open source and free (“free” as in “freedom” as well as in “free beer”), the Botium Platform is an SaaS offer.
 
-
-Installation
-============
+How do I get it ?
+=================
 
 Here you can find installation instructions:
 
@@ -120,8 +116,7 @@ How do I get help ?
 * Read the `Botium in a Nutshell <https://medium.com/@floriantreml/botium-in-a-nutshell-part-1-overview-f8d0ceaf8fb4>`_ series
 * If you think you found a bug in Botium, please use the `Github issue tracker <https://github.com/codeforequity-at/botium-core/>`_
 * Consult the `Botium Wiki <https://wiki.botiumbox.com/>`__
-* For asking questions please use Stackoverflow - we are monitoring and answering questions there
-* Enter our `Discord channel <https://discordapp.com/widget?id=593736460516196353&theme=dark>`_
+* For asking questions please head over to our `Botium Forum <https://forum.botium.ai/>`__
 
 Enterprise Support
 ------------------

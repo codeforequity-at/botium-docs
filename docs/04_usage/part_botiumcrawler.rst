@@ -1,7 +1,7 @@
 .. _botium-crawler:
 
-Botium Crawler Documentation
-============================
+Botium Crawler
+==============
 
 The **Botium Crawler** is doing the work of detecting the conversation flows supported by your chatbot by itself. It does so by analyzing the **quick responses** offered by your chatbot and **simulating clicks on all of the options** in parallel, following all pathes down **until it reaches the end of the conversation**.
 

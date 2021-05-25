@@ -174,6 +174,8 @@ SCRIPTING_TXT_EOL
 
 Line ending character for text files.
 
+.. _botium-caps-SCRIPTING_UTTEXPANSION_MODE:
+
 SCRIPTING_UTTEXPANSION_MODE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -192,6 +194,8 @@ SCRIPTING_UTTEXPANSION_RANDOM_COUNT
 
 Number of utterances to select by random
 
+.. _botium-caps-SCRIPTING_UTTEXPANSION_INCOMPREHENSION:
+
 SCRIPTING_UTTEXPANSION_INCOMPREHENSION
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -208,17 +212,17 @@ For example, the INCOMPREHENSION utterance looks like this::
   i didn't get that
   can you please repeat
 
-Expanded convos will look like this:
+Expanded convos will look like this::
 
-test case 1
+  test case 1
 
-#me
+  #me
+  sending some text
+  
+  #bot
+  !INCOMPREHENSION
 
-sending some text
-
-#bot
-
-!INCOMPREHENSION
+.. _botium-caps-SCRIPTING_UTTEXPANSION_USENAMEASINTENT:
 
 SCRIPTING_UTTEXPANSION_USENAMEASINTENT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -229,27 +233,22 @@ In many data collections, the utterance name is the same as the intent
 the NLU engine should predict. For these cases, this flag can be used to
 add an :ref:`INTENT asserter <asserters-nlp>` when expanding the utterances to convos.
 
-For example, an utterance looks like this:
+For example, an utterance looks like this::
 
-MY_INTENT_NAME
+  MY_INTENT_NAME
+  user example 1
+  user example 2
+  user example 3
 
-user example 1
+Expanded convos will look like this::
 
-user example 2
+  MY_INTENT_NAME.L
 
-user example 3
-
-Expanded convos will look like this:
-
-MY_INTENT_NAME.L
-
-#me
-
-MY_INTENT_NAME
-
-#bot
-
-INTENT MY_INTENT_NAME
+  #me
+  MY_INTENT_NAME
+  
+  #bot
+  INTENT MY_INTENT_NAME
 
 SCRIPTING_MEMORYEXPANSION_KEEP_ORIG
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

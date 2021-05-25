@@ -1,5 +1,5 @@
-Extending Botium / Botium Champions
-***********************************
+Community
+*********
 
 Botium Champions
 ================

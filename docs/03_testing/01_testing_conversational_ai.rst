@@ -1,11 +1,11 @@
-Botium Tutorial
-***************
+Testing Conversational AI
+*************************
 
 Parts of this guide have been published in the book `ACCELERATING SOFTWARE QUALITY - Machine Learning & Artificial Intelligence in the Age of DevOps <https://www.perfecto.io/resources/accelerating-devops-quality>`_ by `Eran Kinsbruner <https://www.linkedin.com/in/eran-kinsbruner-4b47a81/>`_.
 
 .. _botium-basics:
 
-Testing Conversational Flow
+Conversational Flow Testing
 ===========================
 
 This section starts with some technical background on Botium and then
@@ -94,13 +94,9 @@ test case library. And we add another file hello_utt.utterances.txt::
    hey are you here
    anyone at home ?
 
--  The first BotiumScript is a **convo file** — it holds the structure
-      of the conversation you expect the chatbot to follow.
+-  The first BotiumScript is a **convo file** — it holds the structure of the conversation you expect the chatbot to follow.
 
--  The second BotiumScript is an **utterances file** — it holds several
-      phrases for greeting someone, and you expect your chatbot to be
-      able to recognize every single one of them as a nice greeting from
-      the user.
+-  The second BotiumScript is an **utterances file** — it holds several phrases for greeting someone, and you expect your chatbot to be able to recognize every single one of them as a nice greeting from the user.
 
 Botium will take care that the convo and utterances files are combined
 to verify every response of your chatbot to every greeting phrase. So
@@ -140,11 +136,9 @@ And now comes the magic, we change the convo file to::
 Utterances files can be used to verify chatbot responses as well. To
 summarize:
 
--  An utterance referenced in a #me-section means: Botium, send every
-      single phrase to the chatbot and check the response
+-  An utterance referenced in a #me-section means: Botium, send every single phrase to the chatbot and check the response
 
--  An utterance referenced in a #bot-section means: Botium, my chatbot
-      may use any of these answers, all of them are fine
+-  An utterance referenced in a #bot-section means: Botium, my chatbot may use any of these answers, all of them are fine
 
 Identification of Test Cases
 ----------------------------
@@ -160,8 +154,8 @@ And here is the path for “User selects anniversary bouquet”.
 
 |image7|
 
-Scripting Test Cases for a conversational flow
-----------------------------------------------
+Writing Test Cases for a conversational flow
+--------------------------------------------
 
 In BotiumScript, the conversational flow for user story “User composes
 customized bouquet” can be expressed like this::
@@ -193,8 +187,8 @@ customized bouquet” can be expressed like this::
 As soon as a chatbot doesn’t respond as expected, the test case is
 considered as failed and reported.
 
-Scripting Utterance Lists
--------------------------
+Writing Utterance Lists
+-----------------------
 
 What the flow charts don’t show are the endless possibilities for a user
 to express an intent. For each node in the flow chart, there are various
@@ -259,15 +253,13 @@ When using Botium, there are many options for asserting the chatbots
 behaviour - the most simple one, assertion of the text response, is
 shown above.
 
--  Asserting the presence of user interface elements, such as quick
-      response buttons, media attachments, form input elements
+-  Asserting the presence of user interface elements, such as quick response buttons, media attachments, form input elements
 
 -  Asserting with regular expressions and utterance lists
 
 -  Asserting tone with a tone analyzer
 
-   -  Validation that the chatbot tone matches the intended brand
-         communication style
+   -  Validation that the chatbot tone matches the intended brand communication style
 
 -  Asserting availability of hyperlinks presented to the user
 
@@ -308,8 +300,51 @@ run them.
 
 |image9|
 
-E2E Testing with Selenium or Appium
-===================================
+
+Utterance/Convo Expansion
+=========================
+
+The process of merging the utterance files with the convo files is called *Expansion*. See this convo file::
+
+  #me
+  HELLO_UTT
+
+And this utterances file::
+
+  HELLO_UTT
+  hello
+  hi
+  what's up
+
+* In case the convo expansion is disabled, the literal text HELLO_UTT is sent to the bot (which is most likely not what you want).
+* In case the convo expansion is enabled, the user examples from the utterances file are sent to the bot (which is most likely what you want).
+
+Enabling Convo Expansion
+------------------------
+
+* In **Botium CLI**, it is enabled by default
+* In **Botium Bindings**, set the *expandConvos* option (see :ref:`Botium Bindings <botium-bindings>`)
+* In **Botium Box**, use the *Scripting Settings* of the test set
+
+Utterance Expansion
+-------------------
+
+There are cases when it makes sense to have utterance files only, without any convo files.
+
+* Testing for incomprehension (chatbot does not understand)
+* NLU/NLP Testing
+
+Botium can then create convo test cases out of utterance files dynamically:
+
+* For incomprehension testing, it is possible to define a special **INCOMPREHENSION** utterance file - see :ref:`SCRIPTING_UTTEXPANSION_INCOMPREHENSION <botium-caps-SCRIPTING_UTTEXPANSION_INCOMPREHENSION>`
+* For NLU/NLP testing, Botium can check the returned NLU/NLP intent - see :ref:`SCRIPTING_UTTEXPANSION_USENAMEASINTENT <botium-caps-SCRIPTING_UTTEXPANSION_USENAMEASINTENT>`
+
+* In **Botium CLI**, use the *--expandutterances yes* command line switch
+* In **Botium Bindings**, set the *expandUtterancesToConvos* option (see :ref:`Botium Bindings <botium-bindings>`)
+* In **Botium Box**, use the *Scripting Settings* of the test set
+
+End-2-End Testing (Chatbot User Interfaces)
+===========================================
 
 Testing the user experience end-to-end has to be part of every test
 strategy. Apart from the conversation flow, which is best tested on API
@@ -322,26 +357,19 @@ chatbot) and the slow execution time - in an E2E scenario tests are
 running in real time. The good news are that for testing device
 compatibility, a small subset of test cases is sufficient.
 
-Safe Assumptions when testing a chatbot with Selenium
------------------------------------------------------
+Safe Assumptions when testing a chatbot user interface
+------------------------------------------------------
 
 When testing a chatbot with Selenium, there are some safe assumptions
 you can rely on to reduce effort when coding test cases:
 
-1. The chatbot is accessible on a website and there maybe is some kind
-      of click-through to actually open the chatbot window. The
-      procedure to navigate and open the chatbot window is always the
-      same for all test cases.
+1. The chatbot is accessible on a website and there maybe is some kind of click-through to actually open the chatbot window. The procedure to navigate and open the chatbot window is always the same for all test cases.
 
-2. Somewhere in the chatbot window there is an input field for text
-      messages. When hitting “Enter” or clicking on a button besides the
-      input field the text will be sent to the chatbot.
+2. Somewhere in the chatbot window there is an input field for text messages. When hitting “Enter” or clicking on a button besides the input field the text will be sent to the chatbot.
 
-3. Somewhere in the window the chatbot responds in some kind of list
-      view. The text sent from the user is mirrored there as well.
+3. Somewhere in the window the chatbot responds in some kind of list view. The text sent from the user is mirrored there as well.
 
-   a. The chatbot response contains text, pictures, hyperlinks and maybe
-         quick response buttons to click
+4. The chatbot response contains text, pictures, hyperlinks and maybe quick response buttons to click
 
 |image14|
 
@@ -362,14 +390,11 @@ with Selenium selectors and pluggable code snippets:
 
 -  Selenium selector for identification of the input text field
 
--  Selenium selector for identification of the "Send"-Button (if
-      present, otherwise message to the chatbot is sent with "Enter"
-      key)
+-  Selenium selector for identification of the "Send"-Button (if present, otherwise message to the chatbot is sent with "Enter" key)
 
 -  Selenium selector for identification of the chatbot output elements
 
--  Selenium capabilities for device or browser selection or any other
-      Selenium specific settings
+-  Selenium capabilities for device or browser selection or any other Selenium specific settings
 
 *Note: Botium can work with any Selenium or Appium endpoint available -
 either with a virtual browser like PhantomJS, an integrated standalone
@@ -396,8 +421,7 @@ This code snippet does the following:
 
 2. Clicking this button to make the website usable
 
-3. Waiting for a “Start Chat” button to appear and clicking it when
-      available
+3. Waiting for a “Start Chat” button to appear and clicking it when available
 
 4. Waiting until the basic chatbot interaction elements are visible
 
@@ -425,8 +449,8 @@ The full Botium configuration for this scenario looks like this::
 With this configuration, all of your convo and utterances files can be
 used to run test cases with Botium and Selenium.
 
-Testing Voice-Enabled Chatbots
-==============================
+Voice Testing (Voice-Enabled Chatbots)
+======================================
 
 When testing voice apps, all of the principles from the previous
 sections apply as well. Some of the available voice-enabled chatbot
@@ -448,6 +472,8 @@ There is one good reason for using voice instead of text as input to
 your test cases, if there are historic recordings available when
 transitioning from a legacy IVR system. Such libraries often are a
 valuable resource for test data.
+
+Continue to read about Voice App Testing in the `Botium Wiki <https://wiki.botiumbox.com/how-to-guides/voice-app-testing/>`_.
 
 .. |image0| image:: media/image10.png
    :width: 6.27083in

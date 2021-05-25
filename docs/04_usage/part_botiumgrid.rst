@@ -1,7 +1,7 @@
 .. _botium-grid:
 
-Botium Grid Documentation
-=========================
+Botium Grid
+===========
 
 The Botium Grid allows you to distribute Botium tests over several machines. Just start the Botium Agent on a remote machine and connect your Botium scripts to the remote agent.
 

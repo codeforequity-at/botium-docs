@@ -1,5 +1,5 @@
-Botium Usage
-************
+User Manual
+***********
 
 .. include:: part_writing.rst
 .. include:: part_automation.rst

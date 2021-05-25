@@ -1,7 +1,7 @@
 .. _botium-bindings:
 
-Botium Bindings Documentation
-=============================
+Botium Bindings
+===============
 
 Installation
 ------------
