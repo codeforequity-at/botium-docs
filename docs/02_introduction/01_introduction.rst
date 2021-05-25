@@ -64,7 +64,7 @@ When we talk about Botium, we usually mean the whole Botium Stack of components.
 * :ref:`Botium Bindings <botium-bindings>`, the glue to use Botium Core with test runners like Mocha, Jasmine or Jest
 * :ref:`Botium Crawler <botium-crawler>`, like a web crawler, just for chatbots
 * `Botium Box <https://www.botium.ai>`_, the management and reporting platform for making chatbot test automation fast and easy - `Get your free instance here <https://www.botium.ai>`_
-* `Botium Coach <https://www.botium.ai>`_ for continuous visualization of NLP performance metrics - `See Botium Coach Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUMCOACH/pages/75235329/Botium+Coach+User+Manual>`_
+* `Botium Coach <https://www.botium.ai>`_ for continuous visualization of NLP performance metrics - `See Botium Coach Wiki <https://wiki.botiumbox.com/technical-reference/nlp-nlu-testing/>`_
 
 .. image:: botium_stack.png
 
@@ -119,7 +119,7 @@ How do I get help ?
 
 * Read the `Botium in a Nutshell <https://medium.com/@floriantreml/botium-in-a-nutshell-part-1-overview-f8d0ceaf8fb4>`_ series
 * If you think you found a bug in Botium, please use the `Github issue tracker <https://github.com/codeforequity-at/botium-core/>`_
-* Consult the `Botium Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUM>`__
+* Consult the `Botium Wiki <https://wiki.botiumbox.com/>`__
 * For asking questions please use Stackoverflow - we are monitoring and answering questions there
 * Enter our `Discord channel <https://discordapp.com/widget?id=593736460516196353&theme=dark>`_
 

@@ -1,3 +1,5 @@
+.. _simplerest:
+
 Generic HTTP(S)/JSON Connector
 ==============================
 
@@ -70,7 +72,7 @@ msg.\*
 ~~~~~~
 
 This is the Botium message in its internal representation. You can use
-the full structure of the message, see `here <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/24477705/Developing+Custom+Asserters>`__
+the full structure of the message, see `here <https://wiki.botiumbox.com/developer-section/developing-custom-asserters/>`__
 for details.
 
 -  Message Text
@@ -466,7 +468,7 @@ Capabilities::
     ]
   }
 
-(See all extractable fields `here <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/38502401/Writing+own+connector#The-outgoing-message>`__)
+(See all extractable fields `here <https://wiki.botiumbox.com/developer-section/howto-develop-your-own-botium-connector/#the-outgoing-message>`__)
 
 Response hook is a general purpose way to read the response, and update this message object, using JavaScript.
 
@@ -622,7 +624,7 @@ SIMPLEREST_START_TIMEOUT
 HTTP Timeout and retry interval (default 10 seconds)
 
 SIMPLEREST_START_PROCESS_RESPONSE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Flag if the JSON response should be handled as chatbot welcome message. If disabled, the response will be ignored.
 (default true)
@@ -670,6 +672,9 @@ SIMPLEREST_STOP_TIMEOUT
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 HTTP Timeout and retry interval (default 10 seconds)
+
+
+.. _simplerest-inbound:
 
 HTTP(S) Inbound Messages
 ------------------------

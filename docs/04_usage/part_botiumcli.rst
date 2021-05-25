@@ -12,7 +12,7 @@ Botium CLI is available as Node.js module and as Docker image.
 
 **Installing as global Node.js module**::
 
-  npm install -g botium-cli
+  npm install -g botium-cli botium-core
 
 **Installing into an existing NPM project (package.json exists)**::
 
@@ -57,6 +57,10 @@ Prepare and run a simple Botium test case::
 Get help on the command line options::
 
   botium-cli help
+
+Get help on an invididual command::
+
+  botium-cli run help
 
 Botium Capabilities configuration
 ---------------------------------
@@ -145,7 +149,8 @@ botium-cli inbound-proxy
 
 Launch an HTTP/JSON endpoint for inbound messages, forwarding them to Redis to make them consumable by Botium Core.
 
-See `Botium Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/24510469/Generic+HTTP+S+JSON+Connector>`__ how to use.
+See :ref:`here <simplerest-inbound>` how to use.
+
 
 botium-cli emulator
 ~~~~~~~~~~~~~~~~~~~

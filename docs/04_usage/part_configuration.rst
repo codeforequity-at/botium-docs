@@ -38,11 +38,11 @@ Connector/Chatbot Technology Selection
 
 The capability **CONTAINERMODE** is one of the most important settings, as it defines the Botium Connector to use. Botium will try to load the connector by several means, in this order:
 
--  If it refers to a relative filename of a custom connector (see `Howto develop your own Botium Connector <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/38502401/Howto+develop+your+own+Botium+Connector>`_) in the current working directory, this file is loaded and used as connector
+-  If it refers to a relative filename of a custom connector (see `Howto develop your own Botium Connector <https://wiki.botiumbox.com/developer-section/howto-develop-your-own-botium-connector/>`_) in the current working directory, this file is loaded and used as connector
 -  Botium tries to load an NPM module with this name
 -  Botium tries to load an NPM module named with a “botium-connector-” prefix
 
-A list of well-known Botium Connectors is available here: `Botium Connectors <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/360553/Botium+Connectors>`__
+A list of well-known Botium Connectors is available here: `Botium Connectors <https://wiki.botiumbox.com/technical-reference/botium-connectors/>`__
 
 **Examples:**::
 
@@ -227,9 +227,7 @@ SCRIPTING_UTTEXPANSION_USENAMEASINTENT
 
 In many data collections, the utterance name is the same as the intent
 the NLU engine should predict. For these cases, this flag can be used to
-add an `INTENT
-asserter <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/17334319>`__
-when expanding the utterances to convos.
+add an :ref:`INTENT asserter <asserters-nlp>` when expanding the utterances to convos.
 
 For example, an utterance looks like this:
 

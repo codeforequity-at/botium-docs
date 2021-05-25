@@ -136,25 +136,25 @@ Buttons, Forms, …
 Developing Botium Connectors
 ============================
 
-Howto develop your own Botium Connector - see `Botium Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/38502401/Howto+develop+your+own+Botium+Connector>`__
+Howto develop your own Botium Connector - see `Botium Wiki <https://wiki.botiumbox.com/developer-section/howto-develop-your-own-botium-connector/>`__
 
-Howto develop your own HTTP/JSON Botium Connector - see `Botium Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/744783879/Howto+develop+your+own+HTTP+JSON+Botium+Connector>`__
+Howto develop your own HTTP/JSON Botium Connector - see `Botium Wiki <https://wiki.botiumbox.com/developer-section/howto-develop-your-own-http-json-botium-connector/>`__
 
-Howto deploy my own Botium Connector - see `Botium Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/761004038/Howto+deploy+my+own+Botium+Connector>`__
+Howto deploy my own Botium Connector - see `Botium Wiki <https://wiki.botiumbox.com/developer-section/howto-deploy-my-own-botium-connector/>`__
 
 .. _develop-asserter:
 
 Developing Custom Asserters
 ===========================
 
-Developing Custom Asserters - see `Botium Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/24477705/Developing+Custom+Asserters>`__
+Developing Custom Asserters - see `Botium Wiki <https://wiki.botiumbox.com/developer-section/developing-custom-asserters/>`__
 
 .. _develop-logichook:
 
 Developing Botium Logic Hooks
 =============================
 
-Developing Custom Logic Hooks - see `Botium Wiki <https://botium.atlassian.net/wiki/spaces/BOTIUM/pages/642908193/Developing+Custom+Logic+Hooks>`__
+Developing Custom Logic Hooks - see `Botium Wiki <https://wiki.botiumbox.com/developer-section/developing-custom-logic-hooks/>`__
 
 .. include:: part_customhooks.rst
 .. include:: part_precompilers.rst

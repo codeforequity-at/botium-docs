@@ -225,6 +225,8 @@ This asserter takes one or two arguments:
 * First argument is maximum length of the bot response
 * Second argument is the maximum count of the bot responses - some bots deliver multiple responses at once.
 
+.. _asserters-nlp:
+
 NLP Asserter (Intents, Entities, Confidence)
 --------------------------------------------
 

@@ -27,7 +27,7 @@ The following commands will install Botium Bindings, extend your Mocha specs wit
 
 ::
 
-  npm install -g botium-cli
+  npm install -g botium-cli botium-core
   botium-cli init
   botium-cli run
 
