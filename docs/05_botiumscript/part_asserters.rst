@@ -146,6 +146,7 @@ JSONPath Asserter can optionally be configured with global args in botium.json. 
 - **path** - predefined JSONPath expression
 - **pathTemplate** - Mustache template for predefined JSONPath expression (based on args)
 - **assertTemplate** - Mustache template for assertion value (based on args)
+- **matchingMode** (since 1.11.6) - matching mode to use for assertions (see :ref:`SCRIPTING_MATCHING_MODE capability <cap-scripting-matching-mode>`) (default is to use the global matching mode)
 
 Example 1 - WATSONV1_HAS_CONTEXT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,7 +163,8 @@ Example 1 - WATSONV1_HAS_CONTEXT
             "src": "JsonPathAsserter",
             "args": {
               "argCount": 1,
-              "pathTemplate": "$.context['{{args.0}}']"
+              "pathTemplate": "$.context['{{args.0}}']",
+              "matchingMode": "equalsIgnoreCase"
             }
           }
         ]

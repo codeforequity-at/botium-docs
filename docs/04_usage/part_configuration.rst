@@ -141,6 +141,8 @@ Logic to use for comparing the bot response to the utterances:
 -  **regexpIgnoreCase** to use `regular expressions <https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp>`_  (case insensitive)
 -  **include** to do a substring matching (case sensitive)
 -  **includeIgnoreCase** (or includeLowerCase - legacy value) to do a substring matching (case insensitive)
+-  **equals** to do exact string matching (case sensitive)
+-  **equalsIgnoreCase** to do a exact string matching (case insensitive)
 
 .. _cap-scripting-enable-memory:
 
