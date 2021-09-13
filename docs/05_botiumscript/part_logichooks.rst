@@ -3,14 +3,40 @@
 Using Logic Hooks
 =================
 
-Logic Hooks are used to inject advanced conversation logic into the conversation flow. They can be added at any position inside the convo file.
+Logic Hooks are used to inject advanced conversation logic into the conversation flow.
 
-PAUSE 
+They can be put everywhere into the script, except bot section. There the order is the following:
+* Botium Logic Hooks
+* Requesting bot message
+* Botium Asserters
+* Asserting bot message
+* Botium Asserters and Botium Logic Hooks
+
+Like
+  #bot
+  PAUSE 100
+  BUTTON Option1
+  Hello! Please choose Option1 or Option2!
+  SET_SCRIPTING_MEMORY secondbutton|Option2
+  BUTTON $secondbutton
+
+If you dont have a text to assert, but you have logichook to run after text asserting, use an empty row:
+  #me
+  Whats your name?
+  #bot
+
+  PAUSE 1000
+
+As default the asserters/logichooks are executed in order they are defined. But some special technical logichooks are
+forced to execute before, or after this order.
+For example with WAITFORBOT is always executed in the beginning.
+
+PAUSE
 -----
 
 * argument: pause time in milliseconds
-* when used in a #me section, will pause after text is sent to bot
-* when used in a #bot section, will pause after reply is received from bot
+* when used in a #me section, will pause before/after text is sent to bot depending on its position in script
+* when used in a #bot section, will pause before/after reply is received from bot depending on its position in script
 
 WAITFORBOT
 ----------
@@ -29,22 +55,10 @@ SET_SCRIPTING_MEMORY
 
 * arguments: name of the variable, new value
 * Sets/overwrites a variable
-* Can be used in #begin, #me, and #bot sections, and in botium,json as global.
+* Can be used in #begin, #me, and #bot sections, and in botium.json as global.
 * You should start the variable name usually without "$" (Use "$" if you want to use logic hook argument replacement)
-* It is executed in the end of the section.
-
-So this wont work as expected::
-
   #me
   SET_SCRIPTING_MEMORY orderNum|111
-  pls tell me the status for $orderNum
-
-But you can do it this way::
-
-  #begin
-  SET_SCRIPTING_MEMORY orderNum|111
-
-  #me
   pls tell me the status for $orderNum
 
 ASSIGN_SCRIPTING_MEMORY
@@ -52,9 +66,9 @@ ASSIGN_SCRIPTING_MEMORY
 
 * arguments: name of the variable, JSON-Path expression
 * Sets/overwrites a variable from message content
-* Can be used in #bot sections only, and in botium,json as global.
+* Can be used in #bot sections only after the bot message, and in botium,json as global.
 * You should start the variable name usually without "$" (Use "$" if you want to use logic hook argument replacement)
-* It is executed in the end of the section.
+* Use this logichook with care. If this logichook is before the bot message, then you will got an error while running your test.
 
 Extract a variable from a card and use it in the next conversation step::
 
@@ -63,17 +77,18 @@ Extract a variable from a card and use it in the next conversation step::
 
   #me
   get invoice details for customer number 435643
-  
+
   #bot
+
   CARDS INVOICE NUMBER
   ASSIGN_SCRIPTING_MEMORY invoiceNumber|$.cards[0].content
-    
-  #me 
+
+  #me
   get invoice due date for invoice number $invoiceNumber
-  
+
   #bot
   invoice due date for invoice number $invoiceNumber is 02/12/2020
- 
+
 CLEAR_SCRIPTING_MEMORY
 ----------------------
 
@@ -81,7 +96,6 @@ CLEAR_SCRIPTING_MEMORY
 * Deletes a variable.
 * Can be used in #begin, #me, and #bot sections, but not in botium,json as global. (Global clear has no sense. There is nothing to clear there)
 * You should start the variable name usually without "$" (Use "$" if you want to use logic hook argument replacement)
-* It is executed in the end of the section as SET_SCRIPTING_MEMORY.
 
 .. _logichooks-skip-bot-unconsumed:
 
@@ -97,7 +111,7 @@ UPDATE_CUSTOM
 Add custom data to an outgoing message to trigger custom behaviour in the connector (consult documentation of the Botium Connector).
 
 * arguments: custom action, custom field, custom value
-* This logic hook is used for triggering custom actions in a connector. You have to consult the connector documentation for the supported custom actions. 
+* This logic hook is used for triggering custom actions in a connector. You have to consult the connector documentation for the supported custom actions.
 * When used in the #begin section, the custom action is called for all convo steps
 
 Using UPDATE_CUSTOM globally
