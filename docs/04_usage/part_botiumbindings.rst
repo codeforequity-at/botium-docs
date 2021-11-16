@@ -91,7 +91,7 @@ See `this repl.it <https://repl.it/@FlorianTreml/replit-botium-bindings-arun-1>`
 Test Runner Configuration
 -------------------------
 
-Configuration the test runners (Mocha, Jasmine or Jest) are done in the package.json command line calls to the test runner CLI. For example, to choose another Mocha reporter than the default one, change it in package.json::
+Configuration of the test runners (Mocha, Jasmine or Jest) are done in the package.json command line calls to the test runner CLI. For example, to choose another Mocha reporter than the default one, change it in package.json::
 
   {
     ...
@@ -105,3 +105,27 @@ Test Runner Timeouts
 --------------------
 
 Botium tests can take a rather long time, whereas test runners like Mocha and Jasmine expect the tests to complete within a short period of time. It is possible to extend this period of default 60000ms (60 seconds) by setting the environment variables *BOTIUM_MOCHA_TIMEOUT* / *BOTIUM_JASMINE_TIMEOUT* (milliseconds).
+
+Running Tests in Parallel
+-------------------------
+
+This is possible when using Jest as test runner.
+
+First, split your convos into multiple directories - for each directory, Jest will run a separate job.
+
+In each directory, place a file *botium.spec.js*:
+
+  const BotiumBindings = require('botium-bindings')
+  BotiumBindings.helper.jest().setupJestTestSuite({ bb: new BotiumBindings({ convodirs: [__dirname] }) })
+
+Jest will now run test cases in parallel:
+
+  {
+    ...
+    "scripts": {
+      "test": "jest spec"
+    },
+    ...
+  }
+
+See `this repl.it <https://repl.it/@FlorianTreml/replit-botium-bindings-jest>`_ as an example.
