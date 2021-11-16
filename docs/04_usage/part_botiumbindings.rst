@@ -113,12 +113,12 @@ This is possible when using Jest as test runner.
 
 First, split your convos into multiple directories - for each directory, Jest will run a separate job.
 
-In each directory, place a file *botium.spec.js*:
+In each directory, place a file *botium.spec.js*::
 
   const BotiumBindings = require('botium-bindings')
   BotiumBindings.helper.jest().setupJestTestSuite({ bb: new BotiumBindings({ convodirs: [__dirname] }) })
 
-Jest will now run test cases in parallel:
+Jest will now run test cases in parallel::
 
   {
     ...
