@@ -184,6 +184,10 @@ List of Functions
 * $month: current month. Local specific. Example: "March"
 * $month_MM: current month. Local specific. Example: "03"
 * $year: Example: "2019"
+* $tomorrow(<date pattern like YYYY-MM-DD>): next day, formatted as given by the pattern (if omitted then locale specific)
+* $yesterday(<date pattern like YYYY-MM-DD>): next day, formatted as given by the pattern (if omitted then locale specific)
+* $date_add(amount, unit, pattern): adding to current date (see moment.js) and formatting. Example: $date_add(1, "day", YYYY.MM.DD)
+* $date_subtract(amount, unit, pattern): subtracting from current date (see moment.js) and formatting. Example: $date_subtract(1, "month", YYYY.MM.DD)
 * $random10: 10 digit long random number. Example: "6084037818"
 * $random(<length>): <length> digit long random number.
 * $uniqid:  V1. Example: "2e65c580-4fb4-11e9-b543-bf076857f1d1"
