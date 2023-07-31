@@ -230,6 +230,47 @@ You can see in this example that the *SIMPLEREST_BODY_JSONPATH*
 capability splits the response into multiple chunks, and the other
 JSONPath expressions are evaluated **relative to them, 3 times**.
 
+SIMPLEREST_CONTEXT_IGNORE_JSONPATH / SIMPLEREST_CONTEXT_IGNORE_MATCH
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Evaluate a JSONPath expression against the context (by default, the response body,
+see below). If the path exists (and if it matches, if a match is given), then the full response is ignored by Botium.
+
+**Example: this response contains multiple text messages and an "ignore" flag**::
+
+  {
+    response: {
+      text: 'text 1',
+      ignore: 'y'
+    }
+  }
+
+
+  {
+    response: {
+      text: 'text 1',
+      ignore: 'n'
+    }
+  }
+
+  ...
+  "SIMPLEREST_CONTEXT_IGNORE_JSONPATH": "$.ignore",
+  "SIMPLEREST_CONTEXT_IGNORE_MATCH": "y"
+  ...
+
+The first response is ignored, the second one is not.
+
+SIMPLEREST_CONTEXT_SKIP_JSONPATH / SIMPLEREST_CONTEXT_SKIP_MATCH
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Similar to above, the current response is ignored, but an additional empty message is sent to continue the conversation.
+
+
+SIMPLEREST_CONTEXT_CONTINUE_JSONPATH / SIMPLEREST_CONTEXT_CONTINUE_MATCH
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Similar to above, the current response is processed, and an additional empty message is sent to continue the conversation.
+
 SIMPLEREST_RESPONSE_JSONPATH(*)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
