@@ -1,7 +1,7 @@
 import sphinx_rtd_theme
 
 project = 'Botium'
-copyright = '2020, Botium'
+copyright = '2023, Botium'
 author = 'Botium'
 version = '1.x'
 extensions = [ 'sphinx_rtd_theme' ]
