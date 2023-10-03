@@ -450,12 +450,6 @@ package <https://www.npmjs.com/package/request#requestoptions-callback>`__
 
 You can use this capability many ways:
 
--  use **JavaScript code as string** in botium.json
-
-::
-
-  "SIMPLEREST_REQUEST_HOOK": "requestOptions.body = { bodyField: 'val', bodyField2: context.contextField }; context.contextField = 'new value'"
-
 -  reference a **JavaScript module** in botium.json
 
 ::
@@ -527,7 +521,7 @@ You can use this capability same way as SIMPLEREST_REQUEST_HOOK, just with **bot
 
 ::
 
-  "SIMPLEREST_RESPONSE_HOOK": "botMsg.nlp = {intent: {name: botMsg.sourceData.intent}};"
+  "SIMPLEREST_RESPONSE_HOOK": "connectors/simple/my-response-hook.js"
 
 Most likely you want to use it to extract some custom values from the
 HTTP/JSON response body. You can access this JSON data as part of botMsg
@@ -964,6 +958,3 @@ Some Mustache examples
 - Using environment variable: {{#fnc.env}}MY_PERSONAL_TOKEN{{/fnc.env}}
 
   - Useful for handing over secrets like authentication headers
-
-- Executing code: {{#fnc.func}} 1 + 2 {{/fnc.func}}
-- Executing code from scripting memory: {{#fnc.func}}{{msg.scriptingMemory.javaScript}}{{/fnc.func}}

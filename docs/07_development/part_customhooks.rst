@@ -40,11 +40,3 @@ Example function in file.js::
     console.log('in userSays hook');
     meMsg.CUSTOM_VALUE = 'something'
   }
-
-As Javascript code
-------------------
-
-Add javascript code snippets to the capability value::
-
-  "CUSTOMHOOK_ONUSERSAYS": "meMsg.CUSTOM_VALUE='something'",
-
