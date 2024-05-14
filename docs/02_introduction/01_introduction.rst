@@ -23,7 +23,7 @@ Here is the “Hello, World!” of Botium::
   hello bot!
 
   #bot
-  Hello, meat bag! How can I help you ?
+  Hello, humanoid! How can I help you ?
 
 The test case is named *TC01_HELLO*, and the chatbot is supposed to respond to a user greeting.
 

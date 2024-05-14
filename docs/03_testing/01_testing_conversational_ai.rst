@@ -35,7 +35,7 @@ Botium test case looks like this — also known as “BotiumScript”::
    hello bot!
 
    #bot
-   Hello, meat bag! How can I help you ?
+   Hello, humanoid! How can I help you ?
 
 You can write BotiumScript in several file formats
 
@@ -59,7 +59,7 @@ users will say “hello”, others maybe prefer “hi”::
    hi bot!
 
    #bot
-   Hello, meat bag! How can I help you ?
+   Hello, humanoid! How can I help you ?
 
 Another user may enter the conversation with “hey dude!”::
 
@@ -67,7 +67,7 @@ Another user may enter the conversation with “hey dude!”::
    hey dude
 
    #bot
-   Hello, meat bag! How can I help you ?
+   Hello, humanoid! How can I help you ?
 
 And there are plenty of other phrases we can think of. For this most
 simple use case, there are now at least three or more BotiumScripts to
@@ -79,7 +79,7 @@ write. So let’s rewrite it. We name this file hello.convo.txt::
    HELLO_UTT
 
    #bot
-   Hello, meat bag! How can I help you ?
+   Hello, humanoid! How can I help you ?
 
 You may have noticed the additional lines at the beginning of the
 BotiumScript. The first line contains a reference name for the test case
@@ -107,7 +107,7 @@ user back. In the morning it is::
    HELLO_UTT
 
    #bot
-   Good morning, meat bag! How can I help you this early ?
+   Good morning, humanoid! How can I help you this early ?
 
 And in the evening it is::
 
@@ -115,7 +115,7 @@ And in the evening it is::
    HELLO_UTT
 
    #bot
-   Good evening, meat bag! How can I help you at this late hour ?
+   Good evening, humanoid! How can I help you at this late hour ?
 
 Let’s extract the bot responses to another utterances file::
 

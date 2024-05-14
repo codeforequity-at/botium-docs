@@ -733,14 +733,14 @@ Composing in Markdown files
   - me
     - hello bot
   - bot
-    - hello meat bag
+    - hello humanoid
     - BUTTONS checkbutton|checkbutton2
   ## Test Case 2
   - me
     - hello bot
   - bot
     - TEXT
-      - hello meat bag
+      - hello humanoid
     - BUTTONS
       - checkbutton
       - checkbutton2
